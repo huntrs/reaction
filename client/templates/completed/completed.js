@@ -16,21 +16,13 @@ Template.cartCompleted.onCreated(function() {
     var header = "<h1>" + order.email + " has placed an order!</h1>\n";
 
     Meteor.call('sendEmail', {
-        //to: 'ikeewell@gmail.com',
-        to: 'michnich07@gmail.com',
+        to: 'ikeewell@gmail.com',
+        //to: 'michnich07@gmail.com',
         from: 'no-reply@huntrs.com',
         subject: order.email + ' has bought a product',
         text: 'Mailgun is totally awesome for sending emails!',
         html: header + userInfoString + itemString
     });
-    //order.userId -> user who ordered
-    //order.itemCount -> maybe the number of items
-    //order._id
-    //order.createdAt -> time and date of order
-    //order.items -> array of items bought
-    //order.items[].productId
-    //order.items[].title?
-    //order.items[].variants.title
   });
 });
 
